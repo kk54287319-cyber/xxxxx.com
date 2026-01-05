@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Safe Sponsored Ads</title>
+
+<style>
+body {
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    background:#f9f9f9;
+}
+
+/* Section Title */
+.ad-title {
+    font-size:24px;
+    font-weight:bold;
+    margin:20px 0;
+    color:#333;
+}
+
+/* Image Row */
+.image-row {
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.image-row a {
+    width:300px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
+    display:block;
+    transition:0.3s ease;
+}
+
+.image-row img {
+    width:100%;
+    display:block;
+    transition:0.3s ease;
+}
+
+.image-row a:hover img {
+    transform:scale(1.05);
+}
+
+/* Countdown */
+.countdown {
+    margin:20px 0;
+    font-size:18px;
+    font-weight:bold;
+    color:#d60000;
+}
+
+/* Skip Button */
+.skip-btn {
+    display:inline-block;
+    padding:10px 20px;
+    background:#d60000;
+    color:#fff;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.skip-btn:hover {
+    background:#a30000;
+}
+
+/* Circular Countdown */
+.circular-countdown {
+    width:50px;
+    height:50px;
+    margin:10px auto;
+    border-radius:50%;
+    border:4px solid #d60000;
+    border-top-color:transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+</style>
+
+<script>
+let seconds = 5;
+const adLink = "https://www.effectivegatecpm.com/necn8qin?key=f439a04bd35fc5c21446b14a9ab1e069";
+
+// Countdown function
+function countdown() {
+    document.getElementById('count').innerText = seconds;
+    if (seconds <= 0) {
+        // Safe redirect using simulated click (block safe)
+        const tempLink = document.createElement('a');
+        tempLink.href = adLink;
+        tempLink.target = '_blank';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+    } else {
+        seconds--;
+        setTimeout(countdown, 1000);
+    }
+}
+
+window.onload = countdown;
+</script>
+</head>
+
+<body>
+
+<div class="ad-title">🔥 Sponsored Ads</div>
+
+<div class="image-row">
+    <a href="https://www.effectivegatecpm.com/necn8qin?key=f439a04bd35fc5c21446b14a9ab1e069" target="_blank">
+        <img src="img1.jpg" alt="Ad 1">
+    </a>
+    <a href="https://www.effectivegatecpm.com/necn8qin?key=f439a04bd35fc5c21446b14a9ab1e069" target="_blank">
+        <img src="img2.jpg" alt="Ad 2">
+    </a>
+    <a href="https://www.effectivegatecpm.com/necn8qin?key=f439a04bd35fc5c21446b14a9ab1e069" target="_blank">
+        <img src="img3.jpg" alt="Ad 3">
+    </a>
+</div>
+
+<div class="circular-countdown"></div>
+
+<div class="countdown">
+Redirecting in <span id="count">5</span> seconds...
+</div>
+
+<a href="https://www.effectivegatecpm.com/necn8qin?key=f439a04bd35fc5c21446b14a9ab1e069" class="skip-btn" target="_blank">Skip Now</a>
+
+</body>
+</html>
